@@ -36,12 +36,6 @@ fi
 # Chrome path
 export CHROME_BIN='/opt/homebrew-cask/Caskroom/google-chrome/stable-channel/Google Chrome.app/Contents/MacOS/Google Chrome'
 
-# GO
-export GOPATH=$HOME/OneDrive/go
-
-# Dart
-export DART_SDK=/opt/homebrew-cask/Caskroom/darteditor/latest/dart/dart-sdk
-
 # NVM
 export NVM_DIR=~/.nvm
 
@@ -57,9 +51,6 @@ typeset -gU cdpath fpath mailpath path
 path=(
   /usr/local/{bin,sbin}
   /usr/local/opt/go/libexec/bin
-  $GOPATH/bin
-  $DART_SDK/bin
-  $HOME/.cabal/bin
   /Applications/Postgres.app/Contents/Versions/9.3/bin
   /usr/local/heroku/bin
   $path

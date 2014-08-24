@@ -30,19 +30,10 @@ alias bower='noglob bower'
 # node-webkit
 alias nw='/opt/homebrew-cask/Caskroom/node-webkit/0.9.2/node-webkit.app/Contents/MacOS/node-webkit'
 
-# light-table
-alias light='/opt/homebrew-cask/Caskroom/lighttable/0.6.4/LightTable/LightTable.app/Contents/MacOS/node-webkit'
-# julia
-alias julia='/opt/homebrew-cask/Caskroom/julia/0.2.1/Julia-0.2.1.app/Contents/Resources/julia/bin/julia'
-# octave
-alias octave='/usr/local/octave/3.8.0/bin/octave'
-# jdk
-alias jdk7='export JAVA_HOME=`/usr/libexec/java_home -v 1.7`'
-
 # Directory Alias
-alias work='cd ~/OneDrive/workspace'
-alias course='cd ~/OneDrive/Courses'
-alias src='cd ~/Dropbox/Src'
+alias work='cd ~/projects/start'
+alias optima='cd ~/projects/start/optima'
+alias datasafe='cd ~/projects/start/datasafe'
 
 # Python virtualenv configuration
 export WORKON_HOME=$HOME/.virtualenvs
