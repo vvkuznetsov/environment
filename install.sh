@@ -4,13 +4,14 @@
 sudo xcode-select --switch /Applications/Xcode6-Beta6.app
 
 # Install homebrew
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+brew doctor
 
 # Tap additional repos
 brew tap homebrew/dupes
 
 # Install zsh and other packages
-brew install rbenv zsh python python3 tmux wget openssl zsh-syntax-highlighting mongodb redis ack 
+brew install gcc zsh python python3 tmux wget openssl zsh-syntax-highlighting mongodb redis ack 
 
 # Install macvim
 brew install vim --with-python --with-ruby --with-perl
@@ -23,9 +24,8 @@ cd ~/.vim && scripts/setup
 cd bundle/YouCompleteMe && ./install.sh && cd ~
 
 # Install homebrew-cask
-brew tap phinze/hombrew-cask
-brew install brew-cask
-brew cask install skype google-chrome spectacle iterm2 vlc calibre f-lux sourcetree sublime-text mou u-torrent postgres vagrant virtualbox shuttle
+brew install caskroom/cask/brew-cask
+brew cask install skype google-chrome spectacle iterm2 vlc calibre flux sourcetree sublime-text mou utorrent postgres vagrant virtualbox shuttle steam teamviewer spotify evernote kaleidoscope cloud dash pycharm
 # Install quicklook plugin
 brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webp-quicklook suspicious-package --force && qlmanage -r
 # Setup Iterm2 to have option key as Meta key (set profile's option key to +Esc)
@@ -35,13 +35,18 @@ brew tap peco/peco
 brew install peco
 
 # Install powerline font
-git clone git@github.com:Lokaltog/powerline.git
-git clone git@github.com:Lokaltog/powerline-fonts.git
+git clone https://github.com/Lokaltog/powerline-fonts.git
 # Install tomorrow-theme
-git clone git@github.com:chriskempson/tomorrow-theme.git
+git clone https://github.com/chriskempson/tomorrow-theme.git
+
+cd powerline-fonts/AnonymousPro
+/Applications/Font\ Book.app/Contents/MacOS/Font\ Book Anonymice\ Powerline.ttf Anonymice Powerline Bold Italic.ttf Anonymice Powerline Bold.ttf Anonymice Powerline Italic.ttf
+echo 'You should manually set fonts for console & vim'
+cd ~
 
 # Install necessary python package
-pip install pylint virtualenv virtualenvwrappers numpy scipy matplotlib scikit-learn ipython colout easy_install ipython[zmq, qtconsole, notebook, test]
+brew install freetype
+pip install pylint virtualenv virtualenvwrapper numpy scipy matplotlib scikit-learn ipython colout
 
 # Install prezto
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
@@ -50,6 +55,11 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
 chsh -s /bin/zsh
+
+cp environment/zprofile .zprezto/runcoms/zprofile
+cp environment/zpreztorc .zprezto/runcoms/zpreztorc
+curl https://raw.githubusercontent.com/paradox460/prezto/paradox/modules/prompt/functions/prompt_paradox_setup -o ~/.zprezto/modules/prompt/functions/prompt_paradox_setup
+cp environment/prompt_superlinh_setup .zprezto/modules/prompt/functions
 
 # Symlink all dotfiles to home directories
 
@@ -64,7 +74,8 @@ command rvm install ruby-head
 rvm use ruby-head
 
 # Install nvm
-curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash
+source ~/.nvm/nvm.sh
 # Install nodejs
 nvm install 0.10
 nvm use 0.10

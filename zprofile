@@ -34,7 +34,7 @@ fi
 #
 
 # Chrome path
-export CHROME_BIN='/opt/homebrew-cask/Caskroom/google-chrome/stable-channel/Google Chrome.app/Contents/MacOS/Google Chrome'
+export CHROME_BIN='/opt/homebrew-cask/Caskroom/google-chrome/latest/Google Chrome.app/Contents/MacOS/Google Chrome'
 
 # NVM
 export NVM_DIR=~/.nvm
@@ -50,8 +50,8 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
-  /usr/local/opt/go/libexec/bin
-  /Applications/Postgres.app/Contents/Versions/9.3/bin
+  /usr/local/.rvm/bin
+  Contents/Versions/9.3/bin
   /usr/local/heroku/bin
   $path
 )
@@ -85,7 +85,7 @@ if [[ ! -d "$TMPPREFIX" ]]; then
 fi
 
 # NVM
-source $(brew --prefix nvm)/nvm.sh
+# source $(brew --prefix nvm)/nvm.sh
 
 # Rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
