@@ -11,7 +11,7 @@ brew doctor
 brew tap homebrew/dupes
 
 # Install zsh and other packages
-brew install gcc zsh python python3 tmux wget openssl zsh-syntax-highlighting mongodb redis ack 
+brew install gcc zsh python python3 tmux wget openssl zsh-syntax-highlighting mongodb redis ack git git-flow
 
 # Install macvim
 brew install vim --with-python --with-ruby --with-perl
@@ -60,6 +60,7 @@ cp environment/zprofile .zprezto/runcoms/zprofile
 cp environment/zpreztorc .zprezto/runcoms/zpreztorc
 curl https://raw.githubusercontent.com/paradox460/prezto/paradox/modules/prompt/functions/prompt_paradox_setup -o ~/.zprezto/modules/prompt/functions/prompt_paradox_setup
 cp environment/prompt_superlinh_setup .zprezto/modules/prompt/functions
+cat environment/.gitconfig >> .gitconfig
 
 # Symlink all dotfiles to home directories
 

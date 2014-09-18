@@ -13,6 +13,8 @@ fi
 # Customize to your needs...
 # Variable for tmux-powerline
 export PLATFORM="mac"
+export WUSER="Valentin Kuznetsov"
+export WMAIL="valentin.kuznetsov@start-i.ru"
 
 # Alias
 # OSX
@@ -30,14 +32,15 @@ alias bower='noglob bower'
 # node-webkit
 alias nw='/opt/homebrew-cask/Caskroom/node-webkit/0.9.2/node-webkit.app/Contents/MacOS/node-webkit'
 
-# Directory Alias
-alias work='cd ~/projects/start'
-alias optima='cd ~/projects/start/optima'
-alias datasafe='cd ~/projects/start/datasafe'
-
 # Python virtualenv configuration
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+alias on='workon'
+
+# Directory Alias
+alias work='cd ~/projects/start'
+alias optima='cd ~/projects/start/optima && workon optima'
+alias cm='cd ~/projects/start/cm && workon cm'
 
 #Peco
 function peco-src () {

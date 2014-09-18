@@ -50,6 +50,7 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /usr/local/{bin,sbin}
+  $HOME/bin/Sencha/Cmd/5.0.1.231
   /usr/local/.rvm/bin
   Contents/Versions/9.3/bin
   /usr/local/heroku/bin
@@ -89,3 +90,12 @@ fi
 
 # Rbenv
 # if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+
+# ORACLE
+export ORACLE_HOME="$HOME/oracle/instantclient_11_2_x64"
+export DYLD_LIBRARY_PATH=$ORACLE_HOME
+export LD_LIBRARY_PATH=$ORACLE_HOME
+
+# Sencha
+export SENCHA_CMD_5_0_1_231="$HOME/bin/Sencha/Cmd/5.0.1.231"
