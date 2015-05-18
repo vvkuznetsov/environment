@@ -1,11 +1,11 @@
 [[ -s "$HOME/.bash_profile" ]] && source "$HOME/.bash_profile"
 
 # Promt
-function _update_ps1() {
-  export PS1="$(~/powerline-shell/powerline-shell.py $? 2> /dev/null)"
-}
+# function _update_ps1() {
+#   export PS1="$(~/powerline-shell/powerline-shell.py $? 2> /dev/null)"
+# }
 
-export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+# export PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
